@@ -1,8 +1,8 @@
 /** @jest-environment jsdom */
 
 import { create } from 'react-test-renderer';
-import withDoppelganger from 'with-doppelganger/withDoppelganger';
 import React, { memo } from 'react';
+import withDoppelganger from 'with-doppelganger/withDoppelganger';
 
 const TextInput = memo(({ value = '' }) => <input type="text" value={value} />);
 
