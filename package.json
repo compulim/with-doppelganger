@@ -6,9 +6,9 @@
   "author": "William Wong (https://github.com/compulim)",
   "license": "MIT",
   "workspaces": [
+    "packages/with-doppelganger",
     "packages/pages",
-    "packages/integration-test",
-    "packages/with-doppelganger"
+    "packages/integration-test"
   ],
   "scripts": {
     "build": "npm run build --if-present --workspaces",
