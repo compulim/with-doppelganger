@@ -1,16 +1,26 @@
-import { withDoppelganger } from 'with-doppelganger';
-import React, { useMemo, useState } from 'react';
+import './App.css';
 
-import Input from './Input';
+import { type FormEventHandler, useCallback, useState } from 'react';
 
-const InputWithDoppelganger = withDoppelganger(Input);
+import AutoResizeTextArea from './AutoResizeTextArea/AutoResizeTextArea';
 
 const App = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string | ReadonlyArray<string> | number | undefined>(
+    'Excepteur fugiat veniam qui eiusmod officia aliquip aliqua dolore cillum exercitation consectetur. Qui sunt ex pariatur magna irure in dolore dolore. Et aliquip ut adipisicing sunt.'
+  );
 
-  useMemo(() => console.log({ value }), [value]);
+  const handleInput = useCallback<FormEventHandler<{ value?: string | ReadonlyArray<string> | number | undefined }>>(
+    ({ currentTarget: { value } }) => setValue(value),
+    [setValue]
+  );
 
-  return <InputWithDoppelganger onInput={setValue} value={value} />;
+  return (
+    <main className="app">
+      <h1>withDoppelganger</h1>
+      <h2>Auto-resize text area using doppelganger</h2>
+      <AutoResizeTextArea autoFocus={true} onInput={handleInput} value={value} />
+    </main>
+  );
 };
 
 export default App;

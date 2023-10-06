@@ -1,5 +1,5 @@
+import { type FormEventHandler, memo, useCallback } from 'react';
 import { useRefFrom } from 'use-ref-from';
-import React, { FormEventHandler, memo, useCallback } from 'react';
 
 type Props = {
   onInput?: (value: string) => void;
@@ -7,7 +7,7 @@ type Props = {
   value?: string;
 };
 
-const Input = memo(({ onInput, type = 'text', value = '' }: Props) => {
+const Input = memo<Props>(({ onInput, type = 'text', value = '' }: Props) => {
   const onInputRef = useRefFrom(onInput);
 
   const handleInput = useCallback<FormEventHandler<HTMLInputElement>>(
