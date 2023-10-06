@@ -18,7 +18,7 @@ const App = () => {
     <main className="app">
       <h1>withDoppelganger</h1>
       <h2>Auto-resize text area using doppelganger</h2>
-      <AutoResizeTextArea autoFocus={true} onInput={handleInput} value={value} />
+      <AutoResizeTextArea autoFocus={true} onInput={handleInput} spellCheck={false} value={value} />
     </main>
   );
 };

@@ -1,21 +1,15 @@
 import './AutoResizeTextArea.css';
 
-import { type TextareaHTMLAttributes } from 'react';
 import { withDoppelganger } from 'with-doppelganger';
 
 import TextArea from './TextArea';
+import withProps from './withProps';
 
-const TextAreaWithDoppelganger = withDoppelganger(TextArea);
+const TextAreaWithDoppelganger = withProps(withDoppelganger(TextArea), {
+  containerClassName: 'auto-resize-text-area',
+  doppelgangerClassName: 'auto-resize-text-area__doppelganger',
+  suffix: '\u200b'
+});
 
-const AutoResizeTextArea = (props: TextareaHTMLAttributes<HTMLTextAreaElement>) => {
-  return (
-    <TextAreaWithDoppelganger
-      containerClassName="auto-resize-text-area"
-      doppelgangerClassName="auto-resize-text-area__doppelganger"
-      suffix={'\u200b'}
-      {...props}
-    />
-  );
-};
-
-export default AutoResizeTextArea;
+// export default AutoResizeTextArea;
+export default TextAreaWithDoppelganger;
