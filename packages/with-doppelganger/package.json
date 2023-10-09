@@ -88,6 +88,6 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.22.15",
-    "react-wrap-with": "^0.0.3-main.849ef6f"
+    "react-wrap-with": "^0.0.3-main.c2f2663"
   }
 }

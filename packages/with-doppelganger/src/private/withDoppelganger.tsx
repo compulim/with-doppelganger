@@ -1,5 +1,5 @@
-import { ComponentType, createElement, type PropsWithChildren } from 'react';
-import { Extract, type HowOf, Spy, wrapWith } from 'react-wrap-with';
+import { type ComponentType, createElement, type PropsWithChildren } from 'react';
+import { Extract, Spy, wrapWith } from 'react-wrap-with';
 
 type DoppelgangerProps = PropsWithChildren<{
   as?: ComponentType<PropsWithChildren<{ className?: string }>> | string;
@@ -27,17 +27,13 @@ const DoppelgangerWrapper = ({
 
 DoppelgangerWrapper.displayName = 'DoppelgangerWrapper';
 
-const withDoppelganger = wrapWith<
-  typeof DoppelgangerWrapper,
-  'as' | 'containerClassName' | 'doppelgangerClassName' | 'prefix' | 'suffix',
-  'value'
->(DoppelgangerWrapper, {
+const withDoppelganger = wrapWith(DoppelgangerWrapper, {
   as: Extract,
   containerClassName: Extract,
   doppelgangerClassName: Extract,
   prefix: Extract,
   suffix: Extract,
   value: Spy
-} satisfies HowOf<typeof DoppelgangerWrapper>);
+});
 
 export default withDoppelganger;
