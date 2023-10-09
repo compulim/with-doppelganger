@@ -29,7 +29,7 @@
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-wrap-with": "^0.0.3-main.c2f2663",
+    "react-wrap-with": "^0.0.4",
     "use-ref-from": "^0.0.2",
     "with-doppelganger": "^0.0.0-0"
   }
