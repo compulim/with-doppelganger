@@ -12,12 +12,22 @@ test('simple scenario', () => {
   const TextInputWithDoppelganger = withDoppelganger(TextInput);
 
   // WHEN: Render doppelganger with value of "Hello, World!".
-  const renderer = create(<TextInputWithDoppelganger value="Hello, World!" />);
+  const renderer = create(
+    <TextInputWithDoppelganger
+      containerClassName="container"
+      doppelgangerClassName="doppelganger"
+      value="Hello, World!"
+    />
+  );
 
   // THEN: It should render "Hello, World!".
   expect(renderer.toJSON()).toMatchInlineSnapshot(`
-<div>
-  <div>
+<div
+  className="container"
+>
+  <div
+    className="doppelganger"
+  >
     Hello, World!
   </div>
   <input
