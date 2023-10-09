@@ -1,5 +1,5 @@
 import { useRefFrom } from 'use-ref-from';
-import React, { FormEventHandler, memo, useCallback } from 'react';
+import { type FormEventHandler, memo, useCallback } from 'react';
 
 type Props = {
   onInput?: (value: string) => void;

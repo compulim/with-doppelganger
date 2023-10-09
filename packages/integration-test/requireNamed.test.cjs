@@ -2,9 +2,7 @@
 
 const { create } = require('react-test-renderer');
 const { default: withDoppelganger } = require('with-doppelganger/withDoppelganger');
-const React = require('react');
-
-const { memo } = React;
+const { memo } = require('react');
 
 const TextInput = memo(({ value = '' }) => <input type="text" value={value} />);
 
@@ -19,6 +17,9 @@ test('simple scenario', () => {
   // THEN: It should render "Hello, World!".
   expect(renderer.toJSON()).toMatchInlineSnapshot(`
 <div>
+  <div>
+    Hello, World!
+  </div>
   <input
     type="text"
     value="Hello, World!"

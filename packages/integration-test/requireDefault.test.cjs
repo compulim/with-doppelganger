@@ -1,10 +1,8 @@
 /** @jest-environment jsdom */
 
 const { create } = require('react-test-renderer');
+const { memo } = require('react');
 const { withDoppelganger } = require('with-doppelganger');
-const React = require('react');
-
-const { memo } = React;
 
 const TextInput = memo(({ value = '' }) => <input type="text" value={value} />);
 
@@ -19,6 +17,9 @@ test('simple scenario', () => {
   // THEN: It should render "Hello, World!".
   expect(renderer.toJSON()).toMatchInlineSnapshot(`
 <div>
+  <div>
+    Hello, World!
+  </div>
   <input
     type="text"
     value="Hello, World!"
